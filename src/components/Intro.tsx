@@ -11,7 +11,7 @@ const data = {
 
 function Intro() {
   return (
-    <Article>
+    <Article header='About Me'>
       <div
         css={{
           display: 'flex',

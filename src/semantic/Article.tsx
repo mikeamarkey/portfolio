@@ -4,9 +4,10 @@ import { jsx } from '@emotion/react'
 
 interface ArticleProps {
   children: ReactNode
+  header?: string
 }
 
-function Article({ children }: ArticleProps) {
+function Article({ children, header }: ArticleProps) {
   return (
     <article
       css={{
@@ -16,6 +17,17 @@ function Article({ children }: ArticleProps) {
         background: '#fff'
       }}
     >
+      {header ? (
+        <h2
+          css={{
+            margin: '0 0 18px',
+            fontSize: 22,
+            fontWeight: 300
+          }}
+        >
+          {header}
+        </h2>
+      ) : null}
       {children}
     </article>
   )
