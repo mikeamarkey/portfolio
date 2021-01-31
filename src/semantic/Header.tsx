@@ -8,8 +8,8 @@ function Header() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        height: '40px',
-        padding: '8px',
+        height: 40,
+        padding: 8,
         background: '#282c34',
         color: 'white'
       }}

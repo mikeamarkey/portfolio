@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 
+import { Intro, Repos, Starred } from '../components'
+
 function Main() {
   return (
     <main
@@ -13,10 +15,12 @@ function Main() {
           display: 'flex',
           flexDirection: 'column',
           margin: '48px auto',
-          maxWidth: '600px'
+          maxWidth: 600
         }}
       >
-        This is the main content!
+        <Intro />
+        <Repos />
+        <Starred />
       </section>
     </main>
   )
