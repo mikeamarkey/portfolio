@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { StrictMode } from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
 
-function App() {
-  return <div>Hi</div>
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  document.getElementById('root')
+)
+
+if (import.meta.hot) {
+  import.meta.hot.accept()
 }
-
-export default App
