@@ -3,5 +3,9 @@
   "version": "1.0.0",
   "description": "Personal portfolio using github graphql api",
   "keywords": [],
-  "author": "Michael Markey"
+  "author": "Michael Markey",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
 }
