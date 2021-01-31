@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 
-import { Intro, Repos, Starred } from '../components'
+import { Intro, Repos, Starred } from './'
 
 function Main() {
   return (

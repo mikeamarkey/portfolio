@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
-import Article from '../semantic/Article'
+import { Article } from '.'
 
 const data = {
   avatarUrl: 'https://avatars.githubusercontent.com/u/8324973?s=120',
