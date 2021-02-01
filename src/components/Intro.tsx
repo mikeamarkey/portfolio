@@ -1,15 +1,13 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 import { Article } from './'
+import { User } from '../types/models'
 
-const data = {
-  avatarUrl: 'https://avatars.githubusercontent.com/u/8324973?s=120',
-  name: 'Michael Markey',
-  url: 'github.com/mikeamarkey',
-  bio: 'developer at bivalabo. in japan since 2007, originally from the US.'
+interface IntroProps {
+  user: User
 }
 
-function Intro() {
+function Intro({ user }: IntroProps) {
   return (
     <Article header='About Me'>
       <div
@@ -20,9 +18,11 @@ function Intro() {
         }}
       >
         <img
-          src={data.avatarUrl}
+          src={user.avatarUrl}
           css={{
-            borderRadius: '50%'
+            margin: 4,
+            borderRadius: '50%',
+            height: 120
           }}
         />
       </div>
@@ -32,9 +32,9 @@ function Intro() {
           textAlign: 'center'
         }}
       >
-        <p css={{ fontSize: 16 }}>{data.name}</p>
-        <p css={{ fontSize: 12 }}>{data.url}</p>
-        <p css={{ fontSize: 14 }}>{data.bio}</p>
+        <p css={{ fontSize: 16 }}>{user.name}</p>
+        <p css={{ fontSize: 12 }}>{user.url}</p>
+        <p css={{ fontSize: 14 }}>{user.bio}</p>
       </div>
     </Article>
   )
