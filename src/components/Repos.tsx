@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 
-import { Article } from '.'
+import { Article } from './'
 
 interface Repo {
   id: string

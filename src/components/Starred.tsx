@@ -1,5 +1,5 @@
 import React from 'react'
-import { Article } from '.'
+import { Article } from './'
 
 function Starred() {
   return <Article>This are the things I like</Article>
