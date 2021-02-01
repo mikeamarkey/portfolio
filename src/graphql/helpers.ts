@@ -1,17 +1,16 @@
-import { ProfileResponse, ProfileData } from '../types/models'
+import { IProfileData, IProfileResponse } from '../types/models'
 
 export function createProfileData(
-  response: ProfileResponse
-): ProfileData | null {
+  response: IProfileResponse
+): IProfileData | null {
   if (!response) {
     return null
   }
 
   const { user } = response
   const { avatarUrl, bio, name, url, repositories } = user
-  console.log(repositories)
 
-  const profileData: ProfileData = {
+  const profileData = {
     intro: { avatarUrl, bio, name, url },
     repos: repositories.nodes
   }

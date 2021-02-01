@@ -4,11 +4,11 @@ import { useQuery } from '@apollo/client'
 
 import { GET_PROFILE } from '../graphql/queries'
 import { createProfileData } from '../graphql/helpers'
-import { ProfileResponse } from '../types/models'
+import { IProfileResponse } from '../types/models'
 import { Intro, Repos, Starred } from './'
 
 function Main() {
-  const { loading, error, data } = useQuery<ProfileResponse>(GET_PROFILE)
+  const { loading, error, data } = useQuery<IProfileResponse>(GET_PROFILE)
   if (loading) {
     return <div>loading...</div>
   }

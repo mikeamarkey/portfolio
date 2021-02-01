@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 
-import { Repo } from '../types/models'
+import { IRepo } from '../types/models'
 import { Article } from './'
 
 interface ReposProps {
-  data: Repo[]
+  data: IRepo[]
 }
 
 function Repos({ data }: ReposProps) {

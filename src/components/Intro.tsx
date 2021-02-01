@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 import { Article } from './'
-import { Intro } from '../types/models'
+import { IIntro } from '../types/models'
 
 interface IntroProps {
-  data: Intro
+  data: IIntro
 }
 
 function Intro({ data }: IntroProps) {
