@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 import { Article } from './'
-import { User } from '../types/models'
+import { Intro } from '../types/models'
 
 interface IntroProps {
-  user: User
+  data: Intro
 }
 
-function Intro({ user }: IntroProps) {
+function Intro({ data }: IntroProps) {
   return (
     <Article header='About Me'>
       <div
@@ -18,7 +18,7 @@ function Intro({ user }: IntroProps) {
         }}
       >
         <img
-          src={user.avatarUrl}
+          src={data.avatarUrl}
           css={{
             margin: 4,
             borderRadius: '50%',
@@ -32,9 +32,9 @@ function Intro({ user }: IntroProps) {
           textAlign: 'center'
         }}
       >
-        <p css={{ fontSize: 16 }}>{user.name}</p>
-        <p css={{ fontSize: 12 }}>{user.url}</p>
-        <p css={{ fontSize: 14 }}>{user.bio}</p>
+        <p css={{ fontSize: 16 }}>{data.name}</p>
+        <p css={{ fontSize: 12 }}>{data.url}</p>
+        <p css={{ fontSize: 14 }}>{data.bio}</p>
       </div>
     </Article>
   )

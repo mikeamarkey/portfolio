@@ -1,20 +1,14 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 
+import { Repo } from '../types/models'
 import { Article } from './'
 
-interface Repo {
-  id: string
-  description: string
-  name: string
+interface ReposProps {
+  data: Repo[]
 }
 
-const data: Repo[] = [
-  { id: '1', name: 'repo 1', description: 'cool repo' },
-  { id: '2', name: 'repo 2', description: 'cool repo again' }
-]
-
-function Repos() {
+function Repos({ data }: ReposProps) {
   return (
     <Article header='My projects'>
       {data.map(({ id, name, description }) => (

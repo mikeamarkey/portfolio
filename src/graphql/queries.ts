@@ -8,6 +8,17 @@ export const GET_PROFILE = gql`
       bio
       name
       url
+      repositories(
+        first: 6
+        privacy: PUBLIC
+        orderBy: { field: CREATED_AT, direction: DESC }
+      ) {
+        nodes {
+          id
+          description
+          name
+        }
+      }
     }
   }
 `

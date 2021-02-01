@@ -2,13 +2,10 @@
 import { jsx } from '@emotion/react'
 import { useQuery } from '@apollo/client'
 
-import { User } from '../types/models'
 import { GET_PROFILE } from '../graphql/queries'
+import { createProfileData } from '../graphql/helpers'
+import { ProfileResponse } from '../types/models'
 import { Intro, Repos, Starred } from './'
-
-interface ProfileResponse {
-  user: User
-}
 
 function Main() {
   const { loading, error, data } = useQuery<ProfileResponse>(GET_PROFILE)
@@ -18,6 +15,11 @@ function Main() {
 
   if (error || !data) {
     return <div>ERROR!!</div>
+  }
+
+  const profileData = createProfileData(data)
+  if (!profileData || !profileData.intro) {
+    return <div>REQUEST ERROR!</div>
   }
 
   return (
@@ -34,8 +36,8 @@ function Main() {
           maxWidth: 600
         }}
       >
-        <Intro user={data.user} />
-        <Repos />
+        <Intro data={profileData.intro} />
+        <Repos data={profileData.repos} />
         <Starred />
       </section>
     </main>
