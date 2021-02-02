@@ -5,12 +5,22 @@ import { useQuery } from '@apollo/client'
 import { GET_PROFILE } from '../graphql/queries'
 import { createProfileData } from '../graphql/helpers'
 import { IProfileResponse } from '../types/models'
-import { Intro, Repos, Starred } from './'
+import { Intro, MainSkeleton, Repos, Starred } from './'
+
+export const mainStyles = {
+  background: '#f5f5f5'
+}
+
+export const sectionStyles = {
+  margin: '48px auto',
+  maxWidth: 800
+}
 
 function Main() {
   const { loading, error, data } = useQuery<IProfileResponse>(GET_PROFILE)
+
   if (loading) {
-    return <div>loading...</div>
+    return <MainSkeleton />
   }
 
   if (error || !data) {
@@ -23,19 +33,8 @@ function Main() {
   }
 
   return (
-    <main
-      css={{
-        background: '#f5f5f5'
-      }}
-    >
-      <section
-        css={{
-          display: 'flex',
-          flexDirection: 'column',
-          margin: '48px auto',
-          maxWidth: 800
-        }}
-      >
+    <main css={mainStyles}>
+      <section css={sectionStyles}>
         <Intro data={profileData.intro} />
         <Repos data={profileData.repos} />
         <Starred />

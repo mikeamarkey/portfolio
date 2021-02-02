@@ -9,7 +9,7 @@ export const GET_PROFILE = gql`
       name
       url
       repositories(
-        first: 6
+        first: 5
         privacy: PUBLIC
         orderBy: { field: CREATED_AT, direction: DESC }
       ) {

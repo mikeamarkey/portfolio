@@ -16,7 +16,6 @@ function Repos({ data }: ReposProps) {
           key={id}
           css={{
             display: 'flex',
-            alignItems: 'start',
             marginBottom: 24,
             padding: '24px 12px',
             boxShadow: '0px 0px 4px 1px rgb(0 0 0 / 10%)',
@@ -25,16 +24,19 @@ function Repos({ data }: ReposProps) {
         >
           <div
             css={{
-              flex: '30%',
-              flexGrow: 0,
               marginRight: 16,
-              minWidth: 80
+              width: 160,
+              flex: 1
             }}
           >
             <img css={{ maxWidth: '100%' }} src={imageUrl} />
           </div>
 
-          <div>
+          <div
+            css={{
+              flex: 2
+            }}
+          >
             <h3
               css={{
                 marginTop: 0,
@@ -52,7 +54,7 @@ function Repos({ data }: ReposProps) {
               {description}
             </p>
 
-            <div css={{ display: 'flex' }}>
+            <div css={{ display: 'flex', flexWrap: 'wrap' }}>
               {topics.map(({ id, name }) => (
                 <Topic key={id} name={name} />
               ))}
