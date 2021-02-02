@@ -1,5 +1,5 @@
 export interface IProfileData {
-  intro: IIntro | null
+  intro: IIntro
   repos: IRepo[]
 }
 

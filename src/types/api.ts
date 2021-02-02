@@ -1,4 +1,4 @@
-export interface IProfileResponse {
+export interface ProfileResponse {
   user: {
     id: string
     avatarUrl: string

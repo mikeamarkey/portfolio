@@ -1,13 +1,7 @@
 import { IProfileData } from '../types/models'
-import { IProfileResponse } from '../types/api'
+import { ProfileResponse } from '../types/api'
 
-export function createProfileData(
-  response: IProfileResponse
-): IProfileData | null {
-  if (!response) {
-    return null
-  }
-
+export function createProfileData(response: ProfileResponse): IProfileData {
   const { user } = response
   const { avatarUrl, bio, name, url, repositories } = user
 
