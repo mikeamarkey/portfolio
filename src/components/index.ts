@@ -4,5 +4,6 @@ import Intro from './Intro'
 import Main from './Main'
 import Repos from './Repos'
 import Starred from './Starred'
+import Topic from './Topic'
 
-export { Article, Header, Intro, Main, Repos, Starred }
+export { Article, Header, Intro, Main, Repos, Starred, Topic }

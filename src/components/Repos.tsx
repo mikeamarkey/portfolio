@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/react'
 
 import { IRepo } from '../types/models'
-import { Article } from './'
+import { Article, Topic } from './'
 
 interface ReposProps {
   data: IRepo[]
@@ -17,34 +17,33 @@ function Repos({ data }: ReposProps) {
           css={{
             display: 'flex',
             alignItems: 'start',
-            marginBottom: 8,
-            padding: 12,
-            border: '1px solid #131516',
+            marginBottom: 24,
+            padding: '24px 12px',
+            boxShadow: '0px 0px 4px 1px rgb(0 0 0 / 10%)',
             borderRadius: 4
           }}
         >
           <div
             css={{
-              height: 80,
-              marginRight: 16
+              flex: '30%',
+              flexGrow: 0,
+              marginRight: 16,
+              minWidth: 80
             }}
           >
-            <img css={{ maxHeight: '100%' }} src={imageUrl} />
+            <img css={{ maxWidth: '100%' }} src={imageUrl} />
           </div>
 
-          <div
-            css={{
-              flexDirection: 'column'
-            }}
-          >
-            <p
+          <div>
+            <h3
               css={{
                 marginTop: 0,
-                fontSize: 18
+                fontSize: 18,
+                fontWeight: 400
               }}
             >
               {name}
-            </p>
+            </h3>
             <p
               css={{
                 fontSize: 14
@@ -55,7 +54,7 @@ function Repos({ data }: ReposProps) {
 
             <div css={{ display: 'flex' }}>
               {topics.map(({ id, name }) => (
-                <div key={id}>{name}</div>
+                <Topic key={id} name={name} />
               ))}
             </div>
           </div>

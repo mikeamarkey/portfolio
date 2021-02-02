@@ -13,17 +13,29 @@ const mockResponse = {
   result: {
     data: {
       user: {
-        id: '1234',
-        avatarUrl: 'http://google.com',
-        bio: 'Hey buddy',
+        id: '1',
+        avatarUrl: 'http://myavatarurl.com',
+        bio: 'test bio',
         name: 'Michael Markey',
-        url: 'https://github.com',
+        url: 'https://myurl.com',
         repositories: {
           nodes: [
             {
-              id: '1',
-              description: 'my repo',
-              name: 'repo #1'
+              id: '2',
+              description: 'description text',
+              name: 'repo #1',
+              openGraphImageUrl: 'open graph image url',
+              repositoryTopics: {
+                nodes: [
+                  {
+                    id: '3',
+                    topic: {
+                      id: '4',
+                      name: 'topic name'
+                    }
+                  }
+                ]
+              }
             }
           ]
         }
@@ -44,8 +56,10 @@ describe('Apollo client', () => {
       await new Promise((resolve) => setTimeout(resolve, 0))
     })
     // intro
-    expect(getByText('Hey buddy')).toBeInTheDocument()
+    expect(getByText('test bio')).toBeInTheDocument()
     // repos
     expect(getByText('repo #1')).toBeInTheDocument()
+    // topics
+    expect(getByText('topic name')).toBeInTheDocument()
   })
 })

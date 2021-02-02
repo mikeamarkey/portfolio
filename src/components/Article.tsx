@@ -14,6 +14,7 @@ function Article({ children, header }: ArticleProps) {
         margin: 16,
         padding: 16,
         borderRadius: 8,
+        boxShadow: '2px 2px 4px rgba(0 0 0 / 10%)',
         background: '#fff'
       }}
     >
