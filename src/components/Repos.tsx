@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/react'
 
 import { IRepo } from '../types/models'
-import { Article, Topic } from './'
+import { Article, Link, Topic } from './'
 
 interface ReposProps {
   data: IRepo[]
@@ -11,56 +11,58 @@ interface ReposProps {
 function Repos({ data }: ReposProps) {
   return (
     <Article header='My projects'>
-      {data.map(({ id, name, description, imageUrl, topics }) => (
-        <div
-          key={id}
-          css={{
-            display: 'flex',
-            marginBottom: 24,
-            padding: '24px 12px',
-            boxShadow: '0px 0px 4px 1px rgb(0 0 0 / 10%)',
-            borderRadius: 4
-          }}
-        >
+      {data.map(({ id, url, name, description, imageUrl, topics }) => (
+        <Link key={id} href={url} target='_blank'>
           <div
             css={{
-              marginRight: 16,
-              width: 160,
-              flex: 1
+              display: 'flex',
+              marginBottom: 24,
+              padding: '24px 12px',
+              boxShadow: '0px 0px 4px 1px rgb(0 0 0 / 10%)',
+              borderRadius: 4,
+              cursor: 'pointer'
             }}
           >
-            <img css={{ maxWidth: '100%' }} src={imageUrl} />
-          </div>
-
-          <div
-            css={{
-              flex: 2
-            }}
-          >
-            <h3
+            <div
               css={{
-                marginTop: 0,
-                fontSize: 18,
-                fontWeight: 400
+                marginRight: 16,
+                width: 160,
+                flex: 1
               }}
             >
-              {name}
-            </h3>
-            <p
+              <img css={{ maxWidth: '100%' }} src={imageUrl} />
+            </div>
+
+            <div
               css={{
-                fontSize: 14
+                flex: 2
               }}
             >
-              {description}
-            </p>
+              <h3
+                css={{
+                  marginTop: 0,
+                  fontSize: 18,
+                  fontWeight: 400
+                }}
+              >
+                {name}
+              </h3>
+              <p
+                css={{
+                  fontSize: 14
+                }}
+              >
+                {description}
+              </p>
 
-            <div css={{ display: 'flex', flexWrap: 'wrap' }}>
-              {topics.map(({ id, name }) => (
-                <Topic key={id} name={name} />
-              ))}
+              <div css={{ display: 'flex', flexWrap: 'wrap' }}>
+                {topics.map(({ id, name }) => (
+                  <Topic key={id} name={name} />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </Article>
   )

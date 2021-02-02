@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client'
 
 import { GET_PROFILE } from '../graphql/queries'
 import { createProfileData } from '../graphql/helpers'
-import { IProfileResponse } from '../types/models'
+import { IProfileResponse } from '../types/api'
 import { Intro, MainSkeleton, Repos, Starred } from './'
 
 export const mainStyles = {

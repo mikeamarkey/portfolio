@@ -18,6 +18,7 @@ export const GET_PROFILE = gql`
           description
           name
           openGraphImageUrl
+          url
           repositoryTopics(first: 6) {
             nodes {
               id

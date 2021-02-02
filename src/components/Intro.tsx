@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
-import { Article } from './'
+import { Article, Link } from './'
 import { IIntro } from '../types/models'
 
 interface IntroProps {
@@ -33,7 +33,9 @@ function Intro({ data }: IntroProps) {
         }}
       >
         <p css={{ fontSize: 16 }}>{data.name}</p>
-        <p css={{ fontSize: 12 }}>{data.url}</p>
+        <Link href={data.url} target='_blank'>
+          <p css={{ fontSize: 12 }}>{data.url}</p>
+        </Link>
         <p css={{ fontSize: 14 }}>{data.bio}</p>
       </div>
     </Article>

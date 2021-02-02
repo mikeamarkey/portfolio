@@ -1,4 +1,5 @@
-import { IProfileData, IProfileResponse } from '../types/models'
+import { IProfileData } from '../types/models'
+import { IProfileResponse } from '../types/api'
 
 export function createProfileData(
   response: IProfileResponse
@@ -17,6 +18,7 @@ export function createProfileData(
         id,
         name,
         description,
+        url,
         openGraphImageUrl: imageUrl,
         repositoryTopics
       } = repo
@@ -25,6 +27,7 @@ export function createProfileData(
         name,
         description,
         imageUrl,
+        url,
         topics: repositoryTopics.nodes.map((node) => {
           return {
             id: node.topic.id,

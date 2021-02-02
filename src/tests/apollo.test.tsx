@@ -25,6 +25,7 @@ const mockResponse = {
               description: 'description text',
               name: 'repo #1',
               openGraphImageUrl: 'open graph image url',
+              url: 'repository url',
               repositoryTopics: {
                 nodes: [
                   {
