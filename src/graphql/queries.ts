@@ -39,6 +39,13 @@ export const GET_PROFILE = gql`
           url
         }
       }
+      following(first: 10) {
+        nodes {
+          id
+          avatarUrl
+          url
+        }
+      }
     }
   }
 `

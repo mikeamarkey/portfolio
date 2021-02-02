@@ -8,7 +8,7 @@ import Main from '../components/Main'
 
 describe('Apollo client', () => {
   it('should render mocked data', async () => {
-    const { getByText } = render(
+    const { getByText, getByAltText } = render(
       <MockedProvider mocks={[success]} addTypename={false}>
         <Main />
       </MockedProvider>
@@ -26,6 +26,8 @@ describe('Apollo client', () => {
     expect(getByText('topic name')).toBeInTheDocument()
     // starred
     expect(getByText('starred repo #1')).toBeInTheDocument()
+    // following
+    expect(getByAltText('https://github.com/following')).toBeInTheDocument()
   })
 
   it('should fail with malformed response', async () => {

@@ -2,6 +2,7 @@ export interface IProfileData {
   intro: IIntro
   repos: IRepo[]
   starred: IRepo[]
+  following: IFollowing[]
 }
 
 export interface IIntro {
@@ -23,4 +24,10 @@ export interface IRepo {
   url: string
   imageUrl?: string
   topics?: ITopic[]
+}
+
+export interface IFollowing {
+  id: string
+  avatarUrl: string
+  url: string
 }

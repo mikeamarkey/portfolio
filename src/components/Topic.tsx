@@ -15,7 +15,7 @@ function Topic({ name }: TopicProps) {
         padding: '4px 8px',
         borderRadius: 4,
         background: '#282c34',
-        boxShadow: '1px 1px 1px rgba(0, 0, 0, .1)'
+        boxShadow: '1px 1px 1px rgba(0 0 0 / 10%)'
       }}
     >
       {name}

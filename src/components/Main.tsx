@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client'
 import { GET_PROFILE } from '../graphql/queries'
 import { createProfileData } from '../graphql/helpers'
 import { ProfileResponse } from '../types/api'
-import { Intro, MainSkeleton, Repos, Starred } from './'
+import { Intro, Following, MainSkeleton, Repos, Starred } from './'
 
 export const mainStyles = {
   background: '#f5f5f5'
@@ -27,13 +27,14 @@ function Main() {
     return <div>ERROR!!</div>
   }
 
-  const { intro, repos, starred } = createProfileData(data)
+  const { intro, repos, starred, following } = createProfileData(data)
   return (
     <main css={mainStyles}>
       <section css={sectionStyles}>
         <Intro data={intro} />
         <Repos data={repos} />
         <Starred data={starred} />
+        <Following data={following} />
       </section>
     </main>
   )

@@ -24,14 +24,16 @@ function Repos({ data }: ReposProps) {
             }}
           >
             <div css={{ marginRight: 16, width: 160, flex: 1 }}>
-              <img css={{ maxWidth: '100%' }} src={imageUrl} />
+              <img alt={name} css={{ maxWidth: '100%' }} src={imageUrl} />
             </div>
 
             <div css={{ flex: 2 }}>
               <h3 css={{ marginTop: 0, fontSize: 18, fontWeight: 400 }}>
                 {name}
               </h3>
-              <p css={{ fontSize: 12, margin: 0 }}>{url}</p>
+              <p css={{ fontSize: 12, margin: 0, wordBreak: 'break-all' }}>
+                {url}
+              </p>
               <p css={{ fontSize: 14 }}>{description}</p>
 
               <div css={{ display: 'flex', flexWrap: 'wrap' }}>

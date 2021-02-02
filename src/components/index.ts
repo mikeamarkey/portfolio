@@ -1,5 +1,6 @@
 import Article from './Article'
 import ArticleSkeleton from './ArticleSkeleton'
+import Following from './Following'
 import Header from './Header'
 import Intro from './Intro'
 import Link from './Link'
@@ -12,6 +13,7 @@ import Topic from './Topic'
 export {
   Article,
   ArticleSkeleton,
+  Following,
   Header,
   Intro,
   Link,

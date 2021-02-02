@@ -21,7 +21,7 @@ export const success = {
     data: {
       user: {
         id: '1',
-        avatarUrl: 'http://myavatarurl.com',
+        avatarUrl: 'http://myavatarurl.png',
         bio: 'test bio',
         name: 'Michael Markey',
         url: 'https://myurl.com',
@@ -31,7 +31,7 @@ export const success = {
               id: '2',
               description: 'description text',
               name: 'repo #1',
-              openGraphImageUrl: 'open graph image url',
+              openGraphImageUrl: 'https://repoimage.png',
               url: 'repository url',
               __typename: 'Repository',
               repositoryTopics: {
@@ -55,6 +55,15 @@ export const success = {
               description: 'starred text',
               name: 'starred repo #1',
               url: 'starred repository url'
+            }
+          ]
+        },
+        following: {
+          nodes: [
+            {
+              id: '6',
+              avatarUrl: 'https://followingavatar.png',
+              url: 'https://github.com/following'
             }
           ]
         }

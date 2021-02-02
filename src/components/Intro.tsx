@@ -7,7 +7,7 @@ interface IntroProps {
   data: IIntro
 }
 
-function Intro({ data }: IntroProps) {
+function Intro({ data: { avatarUrl, name, url, bio } }: IntroProps) {
   return (
     <Article header='About Me'>
       <div
@@ -18,7 +18,8 @@ function Intro({ data }: IntroProps) {
         }}
       >
         <img
-          src={data.avatarUrl}
+          alt={name}
+          src={avatarUrl}
           css={{
             margin: 4,
             borderRadius: '50%',
@@ -28,11 +29,11 @@ function Intro({ data }: IntroProps) {
       </div>
 
       <div css={{ textAlign: 'center' }}>
-        <p css={{ fontSize: 16 }}>{data.name}</p>
-        <Link href={data.url} target='_blank'>
-          <p css={{ fontSize: 12 }}>{data.url}</p>
+        <p css={{ fontSize: 16 }}>{name}</p>
+        <Link href={url} target='_blank'>
+          <p css={{ fontSize: 12 }}>{url}</p>
         </Link>
-        <p css={{ fontSize: 14 }}>{data.bio}</p>
+        <p css={{ fontSize: 14 }}>{bio}</p>
       </div>
     </Article>
   )

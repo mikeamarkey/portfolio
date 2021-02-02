@@ -7,6 +7,7 @@ export interface ProfileResponse {
     url: string
     pinnedItems: RepositoryResponse
     starredRepositories: StarredResponse
+    following: FollowingResponse
   }
 }
 
@@ -37,5 +38,13 @@ export interface RepositoryTopicsResponse {
       id: string
       name: string
     }
+  }[]
+}
+
+export interface FollowingResponse {
+  nodes: {
+    id: string
+    avatarUrl: string
+    url: string
   }[]
 }
