@@ -1,6 +1,7 @@
 export interface IProfileData {
   intro: IIntro
   repos: IRepo[]
+  starred: IRepo[]
 }
 
 export interface IIntro {
@@ -20,6 +21,6 @@ export interface IRepo {
   description: string
   name: string
   url: string
-  imageUrl: string
-  topics: ITopic[]
+  imageUrl?: string
+  topics?: ITopic[]
 }

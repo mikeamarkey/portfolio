@@ -3,10 +3,11 @@ import { ProfileResponse } from '../types/api'
 
 export function createProfileData(response: ProfileResponse): IProfileData {
   const { user } = response
-  const { avatarUrl, bio, name, url, pinnedItems } = user
+  const { avatarUrl, bio, name, url, pinnedItems, starredRepositories } = user
 
   const profileData = {
     intro: { avatarUrl, bio, name, url },
+    starred: starredRepositories.nodes,
     repos: pinnedItems.nodes.map((repo) => {
       const {
         id,

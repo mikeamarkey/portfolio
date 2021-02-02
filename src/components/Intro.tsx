@@ -27,11 +27,7 @@ function Intro({ data }: IntroProps) {
         />
       </div>
 
-      <div
-        css={{
-          textAlign: 'center'
-        }}
-      >
+      <div css={{ textAlign: 'center' }}>
         <p css={{ fontSize: 16 }}>{data.name}</p>
         <Link href={data.url} target='_blank'>
           <p css={{ fontSize: 12 }}>{data.url}</p>

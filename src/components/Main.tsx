@@ -27,13 +27,13 @@ function Main() {
     return <div>ERROR!!</div>
   }
 
-  const profileData = createProfileData(data)
+  const { intro, repos, starred } = createProfileData(data)
   return (
     <main css={mainStyles}>
       <section css={sectionStyles}>
-        <Intro data={profileData.intro} />
-        <Repos data={profileData.repos} />
-        {/* <Starred /> */}
+        <Intro data={intro} />
+        <Repos data={repos} />
+        <Starred data={starred} />
       </section>
     </main>
   )

@@ -47,6 +47,16 @@ export const success = {
               }
             }
           ]
+        },
+        starredRepositories: {
+          nodes: [
+            {
+              id: '5',
+              description: 'starred text',
+              name: 'starred repo #1',
+              url: 'starred repository url'
+            }
+          ]
         }
       }
     }

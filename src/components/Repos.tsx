@@ -10,8 +10,8 @@ interface ReposProps {
 
 function Repos({ data }: ReposProps) {
   return (
-    <Article header='My projects'>
-      {data.map(({ id, url, name, description, imageUrl, topics }) => (
+    <Article header="Some things I'm building">
+      {data.map(({ id, url, name, description, imageUrl, topics = [] }) => (
         <Link key={id} href={url} target='_blank'>
           <div
             css={{
@@ -23,37 +23,16 @@ function Repos({ data }: ReposProps) {
               cursor: 'pointer'
             }}
           >
-            <div
-              css={{
-                marginRight: 16,
-                width: 160,
-                flex: 1
-              }}
-            >
+            <div css={{ marginRight: 16, width: 160, flex: 1 }}>
               <img css={{ maxWidth: '100%' }} src={imageUrl} />
             </div>
 
-            <div
-              css={{
-                flex: 2
-              }}
-            >
-              <h3
-                css={{
-                  marginTop: 0,
-                  fontSize: 18,
-                  fontWeight: 400
-                }}
-              >
+            <div css={{ flex: 2 }}>
+              <h3 css={{ marginTop: 0, fontSize: 18, fontWeight: 400 }}>
                 {name}
               </h3>
-              <p
-                css={{
-                  fontSize: 14
-                }}
-              >
-                {description}
-              </p>
+              <p css={{ fontSize: 12, margin: 0 }}>{url}</p>
+              <p css={{ fontSize: 14 }}>{description}</p>
 
               <div css={{ display: 'flex', flexWrap: 'wrap' }}>
                 {topics.map(({ id, name }) => (

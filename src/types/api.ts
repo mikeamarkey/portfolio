@@ -6,6 +6,7 @@ export interface ProfileResponse {
     name: string
     url: string
     pinnedItems: RepositoryResponse
+    starredRepositories: StarredResponse
   }
 }
 
@@ -17,6 +18,15 @@ export interface RepositoryResponse {
     url: string
     openGraphImageUrl: string
     repositoryTopics: RepositoryTopicsResponse
+  }[]
+}
+
+export interface StarredResponse {
+  nodes: {
+    id: string
+    description: string
+    name: string
+    url: string
   }[]
 }
 

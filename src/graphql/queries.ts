@@ -28,6 +28,17 @@ export const GET_PROFILE = gql`
           }
         }
       }
+      starredRepositories(
+        first: 4
+        orderBy: { field: STARRED_AT, direction: DESC }
+      ) {
+        nodes {
+          id
+          description
+          name
+          url
+        }
+      }
     }
   }
 `

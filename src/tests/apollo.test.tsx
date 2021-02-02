@@ -24,6 +24,8 @@ describe('Apollo client', () => {
     expect(getByText('repo #1')).toBeInTheDocument()
     // topics
     expect(getByText('topic name')).toBeInTheDocument()
+    // starred
+    expect(getByText('starred repo #1')).toBeInTheDocument()
   })
 
   it('should fail with malformed response', async () => {
