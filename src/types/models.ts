@@ -10,9 +10,24 @@ export interface IProfileResponse {
         id: string
         description: string
         name: string
+        openGraphImageUrl: string
+        repositoryTopics: {
+          nodes: {
+            id: string
+            topic: {
+              id: string
+              name: string
+            }
+          }[]
+        }
       }[]
     }
   }
+}
+
+export interface IProfileData {
+  intro: IIntro | null
+  repos: IRepo[]
 }
 
 export interface IIntro {
@@ -22,13 +37,15 @@ export interface IIntro {
   url: string
 }
 
+export interface ITopic {
+  id: string
+  name: string
+}
+
 export interface IRepo {
   id: string
   description: string
   name: string
-}
-
-export interface IProfileData {
-  intro: IIntro | null
-  repos: IRepo[]
+  imageUrl: string
+  topics: ITopic[]
 }

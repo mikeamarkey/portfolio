@@ -33,7 +33,7 @@ function Main() {
           display: 'flex',
           flexDirection: 'column',
           margin: '48px auto',
-          maxWidth: 600
+          maxWidth: 800
         }}
       >
         <Intro data={profileData.intro} />

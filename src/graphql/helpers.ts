@@ -12,7 +12,27 @@ export function createProfileData(
 
   const profileData = {
     intro: { avatarUrl, bio, name, url },
-    repos: repositories.nodes
+    repos: repositories.nodes.map((repo) => {
+      const {
+        id,
+        name,
+        description,
+        openGraphImageUrl: imageUrl,
+        repositoryTopics
+      } = repo
+      return {
+        id,
+        name,
+        description,
+        imageUrl,
+        topics: repositoryTopics.nodes.map((node) => {
+          return {
+            id: node.topic.id,
+            name: node.topic.name
+          }
+        })
+      }
+    })
   }
 
   return profileData
