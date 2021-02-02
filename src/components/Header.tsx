@@ -14,7 +14,7 @@ function Header() {
         color: 'white'
       }}
     >
-      <p>Michael Markey&apos;s Portfolio</p>
+      <p css={{ margin: 8 }}>Michael Markey&apos;s Portfolio</p>
     </header>
   )
 }
