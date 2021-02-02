@@ -5,7 +5,7 @@ export interface ProfileResponse {
     bio: string
     name: string
     url: string
-    repositories: RepositoryResponse
+    pinnedItems: RepositoryResponse
   }
 }
 

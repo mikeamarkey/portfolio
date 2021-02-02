@@ -3,11 +3,11 @@ import { ProfileResponse } from '../types/api'
 
 export function createProfileData(response: ProfileResponse): IProfileData {
   const { user } = response
-  const { avatarUrl, bio, name, url, repositories } = user
+  const { avatarUrl, bio, name, url, pinnedItems } = user
 
   const profileData = {
     intro: { avatarUrl, bio, name, url },
-    repos: repositories.nodes.map((repo) => {
+    repos: pinnedItems.nodes.map((repo) => {
       const {
         id,
         name,
@@ -16,6 +16,7 @@ export function createProfileData(response: ProfileResponse): IProfileData {
         openGraphImageUrl: imageUrl,
         repositoryTopics
       } = repo
+
       return {
         id,
         name,

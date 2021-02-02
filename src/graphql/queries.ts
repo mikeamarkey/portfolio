@@ -8,23 +8,21 @@ export const GET_PROFILE = gql`
       bio
       name
       url
-      repositories(
-        first: 5
-        privacy: PUBLIC
-        orderBy: { field: CREATED_AT, direction: DESC }
-      ) {
+      pinnedItems(first: 6) {
         nodes {
-          id
-          description
-          name
-          openGraphImageUrl
-          url
-          repositoryTopics(first: 6) {
-            nodes {
-              id
-              topic {
+          ... on Repository {
+            id
+            description
+            name
+            openGraphImageUrl
+            url
+            repositoryTopics(first: 6) {
+              nodes {
                 id
-                name
+                topic {
+                  id
+                  name
+                }
               }
             }
           }

@@ -25,7 +25,7 @@ export const success = {
         bio: 'test bio',
         name: 'Michael Markey',
         url: 'https://myurl.com',
-        repositories: {
+        pinnedItems: {
           nodes: [
             {
               id: '2',
@@ -33,6 +33,7 @@ export const success = {
               name: 'repo #1',
               openGraphImageUrl: 'open graph image url',
               url: 'repository url',
+              __typename: 'Repository',
               repositoryTopics: {
                 nodes: [
                   {
